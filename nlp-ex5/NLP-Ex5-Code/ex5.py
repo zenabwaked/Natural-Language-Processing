@@ -133,8 +133,8 @@ def find_subject_relation_object_trees(doc):
 
 
 # Load Gemini API
-genai.configure(api_key="REMOVED")
-
+import os
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 def query_gemini(text):
     model = genai.GenerativeModel("gemini-pro")
